@@ -21,28 +21,6 @@
 		'default-attachment' => 'fixed',
 	) ) );
 
-add_action("pre_get_posts", "custom_front_page");
-function custom_front_page($wp_query){
-    //Ensure this filter isn't applied to the admin area
-    if(is_admin()) {
-        return;
-    }
-
-    if($wp_query->get('page_id') == get_option('page_on_front')):
-
-        $wp_query->set('post_type', 'case-studies');
-        $wp_query->set('page_id', ''); //Empty
-
-        //Set properties that describe the page to reflect that
-        //we aren't really displaying a static page
-        $wp_query->is_page = 0;
-        $wp_query->is_singular = 0;
-        $wp_query->is_post_type_archive = 1;
-        $wp_query->is_archive = 1;
-
-    endif;
-
-}  
   
 function case_studies() {
   $labels = array(
@@ -69,4 +47,83 @@ function case_studies() {
   register_post_type( 'case-studies', $args ); 
 }
 add_action( 'init', 'case_studies' );
-add_theme_support('post-thumbnails', array( 'post', 'page', 'case-studies' ) );
+
+
+function text() {
+  $labels = array(
+    'name'               => _x( 'texts', 'post type general name' ),
+    'singular_name'      => _x( 'text', 'post type singular name' ),
+    'add_new'            => _x( 'Add New', 'book' ),
+    'add_new_item'       => __( 'Add New Text' ),
+    'edit_item'          => __( 'Edit Text' ),
+    'new_item'           => __( 'New Text' ),
+    'all_items'          => __( 'All Text' ),
+    'menu_name'          => 'Text'
+  );
+  $args = array(
+    'labels'        => $labels,
+    'description'   => 'Shows Text',
+    'public'        => true,
+    'menu_position' => 5,
+    'supports'      => array( 'title', 'editor', 'thumbnail' ),
+    'has_archive'   => true,
+    'capability_type'    => 'page',
+    'singular_name' => 'text',
+    'archive_name'  => 'text'
+  );
+  register_post_type( 'text', $args ); 
+}
+add_action( 'init', 'text' );
+
+function dividers() {
+  $labels = array(
+    'name'               => _x( 'dividers', 'post type general name' ),
+    'singular_name'      => _x( 'divider', 'post type singular name' ),
+    'add_new'            => _x( 'Add New', 'book' ),
+    'add_new_item'       => __( 'Add New Divider' ),
+    'edit_item'          => __( 'Edit Divider' ),
+    'new_item'           => __( 'New Divider' ),
+    'all_items'          => __( 'All Divider' ),
+    'menu_name'          => 'Dividers'
+  );
+  $args = array(
+    'labels'        => $labels,
+    'description'   => 'Shows Divider',
+    'public'        => true,
+    'menu_position' => 5,
+    'supports'      => array( 'title', 'editor', 'thumbnail' ),
+    'has_archive'   => true,
+    'capability_type'    => 'page',
+    'singular_name' => 'divider',
+    'archive_name'  => 'divider'
+  );
+  register_post_type( 'divider', $args ); 
+}
+add_action( 'init', 'dividers' );
+
+function teams() {
+  $labels = array(
+    'name'               => _x( 'teams', 'post type general name' ),
+    'singular_name'      => _x( 'team', 'post type singular name' ),
+    'add_new'            => _x( 'Add New', 'book' ),
+    'add_new_item'       => __( 'Add New Team' ),
+    'edit_item'          => __( 'Edit Team' ),
+    'new_item'           => __( 'New Team' ),
+    'all_items'          => __( 'All Team' ),
+    'menu_name'          => 'Teams'
+  );
+  $args = array(
+    'labels'        => $labels,
+    'description'   => 'Shows Team',
+    'public'        => true,
+    'menu_position' => 5,
+    'supports'      => array( 'title', 'editor', 'excerpt', 'thumbnail' ),
+    'has_archive'   => true,
+    'capability_type'    => 'page',
+    'singular_name' => 'team',
+    'archive_name'  => 'team'
+  );
+  register_post_type( 'team', $args ); 
+}
+add_action( 'init', 'teams' );
+add_theme_support('post-thumbnails', array( 'post', 'page', 'divider', 'team', 'text') );

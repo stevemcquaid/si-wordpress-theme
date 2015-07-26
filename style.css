@@ -187,7 +187,30 @@ p{
 }
 
 .underline{
-  border-bottom: 1px solid #494949;
+  border-bottom: 3px solid #494949;
+  min-height:70px;
+  position:relative;
+  display:block;
+  float:left;
+  width:100%;
+}
+
+.underline img, .text img{
+  height: 70px;
+  max-width:200px;
+  float: left;
+  display:block;
+}
+
+.text img{
+  margin:5px;
+}
+
+.underline h1, .underline h2, .underline p{
+    display: table-cell;
+    vertical-align: bottom;
+  padding:0px 0px 0px 15px;
+  height:60px;
 }
 
 .block{
@@ -205,6 +228,7 @@ p{
 
 #description{
   padding: 10px;
+
 }
 
 #description p{
@@ -295,8 +319,11 @@ p{
 
 .backLink{
   border-top: 2px solid #494949;
-  margin:10px;
+  margin:0;
   text-align:center;
+  display:block;
+  float:left;
+  width:100%;
 }
 
 .backLink a{
@@ -326,3 +353,6 @@ p{
   border-bottom: 1px solid #494949;
 }
 
+.team{
+  padding:10px;
+}

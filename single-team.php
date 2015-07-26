@@ -20,8 +20,8 @@ get_header(); ?>
               <img src='<?php echo wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' )[0]; ?>'>
                 <?php	$title = explode("^", get_the_title()); ?>
                 <div class="header-title">
-                  <h2><?php echo $title[0]; ?></h2>
-                  <h1><?php echo $title[1]; ?></h1>
+                  <h2><?php echo the_excerpt(); ?></h2>
+                  <h1><?php echo $title[0]; ?></h1>
                 </div>
               </div>
               <div class="content">
