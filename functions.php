@@ -2,7 +2,7 @@
 /**
  * @package SI
  */
- 
+
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu',      'SI' ),
 	) );
@@ -21,7 +21,7 @@
 		'default-attachment' => 'fixed',
 	) ) );
 
-  
+
 function case_studies() {
   $labels = array(
     'name'               => _x( 'case-studies', 'post type general name' ),
@@ -44,7 +44,7 @@ function case_studies() {
     'singular_name' => 'case-studies',
     'archive_name'  => 'case-studies'
   );
-  register_post_type( 'case-studies', $args ); 
+  register_post_type( 'case-studies', $args );
 }
 add_action( 'init', 'case_studies' );
 
@@ -71,7 +71,7 @@ function text() {
     'singular_name' => 'text',
     'archive_name'  => 'text'
   );
-  register_post_type( 'text', $args ); 
+  register_post_type( 'text', $args );
 }
 add_action( 'init', 'text' );
 
@@ -97,7 +97,7 @@ function dividers() {
     'singular_name' => 'divider',
     'archive_name'  => 'divider'
   );
-  register_post_type( 'divider', $args ); 
+  register_post_type( 'divider', $args );
 }
 add_action( 'init', 'dividers' );
 
@@ -123,7 +123,7 @@ function teams() {
     'singular_name' => 'team',
     'archive_name'  => 'team'
   );
-  register_post_type( 'team', $args ); 
+  register_post_type( 'team', $args );
 }
 add_action( 'init', 'teams' );
-add_theme_support('post-thumbnails', array( 'post', 'page', 'divider', 'team', 'text') );
+add_theme_support('post-thumbnails', array( 'post', 'page', 'divider', 'team', 'text', 'case-studies') );
