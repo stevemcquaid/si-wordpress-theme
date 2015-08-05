@@ -18,6 +18,7 @@
   <script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/jquery-1.10.2.js"></script>
 	<?php  wp_head();  ?> 
    <title><?php wp_title(); ?></title>
+  <script type="text/javascript" src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/script.js"></script>
 </head>
 <body <?php body_class(); ?>>
     <div id="container">

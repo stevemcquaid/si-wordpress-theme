@@ -108,6 +108,10 @@ a:active {
 	outline: 0;
 }
 
+a:link, a:visited, a:hover, a:active{
+  color:inherit;
+}
+
 a img {
 	border: 0;
 }
@@ -199,6 +203,7 @@ p{
   display:block;
   float:left;
   width:100%;
+
 }
 
 .underline img, .text img{
@@ -213,8 +218,8 @@ p{
 }
 
 .underline h1, .underline h2, .underline p{
-    display: table-cell;
-    vertical-align: bottom;
+  display: table-cell;
+  vertical-align: bottom;
   padding:0px 0px 0px 15px;
   height:60px;
 }
@@ -292,27 +297,37 @@ p{
   margin: 5px 5px 0px 5px;
 }
 
-.accordion .header{
+.accordion .header, .page-header{
   color: #fff;
   background-size: 100% auto;
   position: relative;
   margin-bottom:-4px;
 }
 
-.accordion .header img{
+.page-divider-header{
+  color: #000;
+  padding:10px;
+}
+
+.accordion .header img, .page-header img{
   width:100%;
 }
 
-.accordion .header .header-title{
+.accordion .header .header-title, .page-header-title{
   position: absolute;
   bottom: 1.0em;
   left:1.0em;
 }
 
-.accordion .content p{
+.accordion .content{
+  display:none;
+}
+
+.accordion .content p, .page-content p{
   color: #494949;
   background-color: #fff;
   padding: 10px 10px 20px 10px;
+  
 }
 
 .accordion .content .moreLink a{

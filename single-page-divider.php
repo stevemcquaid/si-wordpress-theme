@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying the cast studies
+ * The template for displaying the page divider
  *
  * @package SI
  */
@@ -16,13 +16,8 @@ get_header(); ?>
         while ( have_posts() ) : the_post(); ?>
         
           <div class="accordion block">
-            <div class="page-header">
-              <img src='<?php echo wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' )[0]; ?>'>
-                <?php	$title = explode("^", get_the_title()); ?>
-                <div class="page-header-title">
-                  <h2><?php echo $title[0]; ?></h2>
-                  <h1><?php echo $title[1]; ?></h1>
-                </div>
+            <div class="page-divider-header">
+                <h2><?php echo get_the_title(); ?></h2>
               </div>
               <div class="page-content">
                 <?php the_content( '<p>', '</p>' ); ?>

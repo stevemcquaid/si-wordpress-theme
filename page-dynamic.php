@@ -10,7 +10,7 @@
  */
 
 get_header(); ?>
-
+ 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
@@ -40,8 +40,8 @@ get_header(); ?>
 
         if ($call[0] == 'case-studies'){
       ?>
-        <script type="text/javascript" src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/script.js"></script>
-        <div class="accordion block">
+
+        <div id="accordion" class="accordion block">
           <div class="header">
             <img src='<?php echo wp_get_attachment_image_src( get_post_thumbnail_id( $query->ID ), 'full' )[0]; ?>'>
               <?php	$title = explode("^", get_the_title()); ?>
@@ -75,6 +75,14 @@ get_header(); ?>
             }
             the_content();
             echo '</div>';
+          }elseif ($call[0] == 'page-divider'){
+            $img = wp_get_attachment_image_src( get_post_thumbnail_id( $query->ID ), 'full' )[0];
+            echo '<a href=', post_permalink(), '><div class="underline">';
+            if ($img){
+              echo '<img src=', $img, '>';
+            }
+            the_excerpt();
+            echo '</div></a>';
           }elseif ($call[0] == 'team'){
           ?>
           <a href="<?php echo post_permalink(); ?>"><div class="underline team">

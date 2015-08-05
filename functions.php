@@ -116,6 +116,32 @@ function dividers() {
 }
 add_action( 'init', 'dividers' );
 
+function pagedivider() {
+  $labels = array(
+    'name'               => _x( 'pagedividers', 'post type general name' ),
+    'singular_name'      => _x( 'pagedivider', 'post type singular name' ),
+    'add_new'            => _x( 'Add New', 'book' ),
+    'add_new_item'       => __( 'Add New pagedivider' ),
+    'edit_item'          => __( 'Edit pagedivider' ),
+    'new_item'           => __( 'New pagedivider' ),
+    'all_items'          => __( 'All pagedivider' ),
+    'menu_name'          => 'pagedividers'
+  );
+  $args = array(
+    'labels'        => $labels,
+    'description'   => 'Shows Page-Divider',
+    'public'        => true,
+    'menu_position' => 5,
+    'supports'      => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
+    'has_archive'   => true,
+    'capability_type'    => 'page',
+    'singular_name' => 'page-divider',
+    'archive_name'  => 'page-divider'
+  );
+  register_post_type( 'page-divider', $args ); 
+}
+add_action( 'init', 'pagedivider' );
+
 function teams() {
   $labels = array(
     'name'               => _x( 'teams', 'post type general name' ),
@@ -141,4 +167,4 @@ function teams() {
   register_post_type( 'team', $args ); 
 }
 add_action( 'init', 'teams' );
-add_theme_support('post-thumbnails', array( 'post', 'page', 'divider', 'team', 'text', 'case-studies') );
+add_theme_support('post-thumbnails', array( 'post', 'page', 'divider', 'team', 'text', 'case-studies', 'page-divider') );
