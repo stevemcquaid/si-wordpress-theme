@@ -40,7 +40,7 @@ get_header(); ?>
 
         if ($call[0] == 'case-studies'){
       ?>
-        <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/script.js"></script>
+        <script type="text/javascript" src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/script.js"></script>
         <div class="accordion block">
           <div class="header">
             <img src='<?php echo wp_get_attachment_image_src( get_post_thumbnail_id( $query->ID ), 'full' )[0]; ?>'>

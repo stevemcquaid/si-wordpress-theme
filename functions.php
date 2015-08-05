@@ -3,6 +3,27 @@
  * @package SI
  */
 
+if ( ! function_exists( '_wp_render_title_tag' ) ) {
+	function theme_slug_render_title() {
+?>
+<title><?php wp_title( '|', true, 'right' ); ?></title>
+<?php
+	}
+	add_action( 'wp_head', 'theme_slug_render_title' );
+}
+
+  if ( ! isset( $content_width ) ) {
+    $content_width = 600;
+  }
+
+function xtreme_enqueue_comments_reply() {
+	if( get_option( 'thread_comments' ) )  {
+		wp_enqueue_script( 'comment-reply' );
+	}
+}
+  
+ add_action( 'comment_form_before', 'xtreme_enqueue_comments_reply' );
+  add_theme_support( 'automatic-feed-links' );
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu',      'SI' ),
 	) );
@@ -15,13 +36,7 @@
 		'search-form', 'comment-form', 'comment-list', 'gallery', 'caption'
 	) );
 
-	// Setup the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'SI_custom_background_args', array(
-		'default-color'      => $default_color,
-		'default-attachment' => 'fixed',
-	) ) );
-
-
+  
 function case_studies() {
   $labels = array(
     'name'               => _x( 'case-studies', 'post type general name' ),
@@ -44,7 +59,7 @@ function case_studies() {
     'singular_name' => 'case-studies',
     'archive_name'  => 'case-studies'
   );
-  register_post_type( 'case-studies', $args );
+  register_post_type( 'case-studies', $args ); 
 }
 add_action( 'init', 'case_studies' );
 
@@ -71,7 +86,7 @@ function text() {
     'singular_name' => 'text',
     'archive_name'  => 'text'
   );
-  register_post_type( 'text', $args );
+  register_post_type( 'text', $args ); 
 }
 add_action( 'init', 'text' );
 
@@ -97,7 +112,7 @@ function dividers() {
     'singular_name' => 'divider',
     'archive_name'  => 'divider'
   );
-  register_post_type( 'divider', $args );
+  register_post_type( 'divider', $args ); 
 }
 add_action( 'init', 'dividers' );
 
@@ -123,7 +138,7 @@ function teams() {
     'singular_name' => 'team',
     'archive_name'  => 'team'
   );
-  register_post_type( 'team', $args );
+  register_post_type( 'team', $args ); 
 }
 add_action( 'init', 'teams' );
 add_theme_support('post-thumbnails', array( 'post', 'page', 'divider', 'team', 'text', 'case-studies') );

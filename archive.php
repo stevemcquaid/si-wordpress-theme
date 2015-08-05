@@ -39,6 +39,12 @@ not used
 
 			// End the loop.
 			endwhile;
+      
+      the_posts_pagination( array(
+				'prev_text'          => __( 'Previous page', 'SI' ),
+				'next_text'          => __( 'Next page', 'SI' ),
+				'before_page_number' => '<span>' . __( 'Page', 'SI' ) . ' </span>',
+			) );
 
 		endif;
 		?>          
