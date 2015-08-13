@@ -183,6 +183,10 @@ input[type=submit]{
 // }
 
 
+#content{
+  float:left;
+  width:100%;
+}
 
 h1{
   font-size: 1.7em;
@@ -319,6 +323,7 @@ p{
   bottom: 1.0em;
   left:1.0em;
 }
+
 
 .accordion .content{
   display:none;
