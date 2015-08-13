@@ -238,8 +238,7 @@ p{
 }
 
 #description{
-  padding: 10px;
-
+  padding: 0px;
 }
 
 #description p{
@@ -256,7 +255,7 @@ p{
   background-color:#fff;
   max-height: 70px;
   width:100%;
-  padding:10px 10px 10px 10px;
+  padding:10px 0px 10px 0px;
 }
 
 #menu{
@@ -272,6 +271,8 @@ p{
 
 #logo{
   max-height:50px;
+  max-width:220px;
+  padding: 5px 10px 0px 0px;
 }
 
 .list{
@@ -372,6 +373,7 @@ p{
   border-right:none;
   border-left:none;
   border-bottom: 1px solid #494949;
+  font-size: 1.5em;
 }
 
 .team{

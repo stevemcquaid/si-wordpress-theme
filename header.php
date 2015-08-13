@@ -23,7 +23,7 @@
 <body <?php body_class(); ?>>
     <div id="container">
       <div id="header">
-        <div id="nav">
+        <div id="nav" class='block'>
           <img id="menu" class="shiftnav-toggle" data-shiftnav-target="shiftnav-main" src="<?php echo  get_template_directory_uri();?>/img/menu.png" alt="menu" />
           <a href=""><img id="logo" src="<?php echo get_template_directory_uri();?>/img/SensoryLogo.jpg" alt="Sensory Interative" /></a>
         </div>

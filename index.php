@@ -15,35 +15,46 @@
 
 get_header(); ?>
 
-
-	<section id="primary" class="content-area">
+	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
       <div class="block">
-        <h1 id="title"><?php echo the_title(); ?></h1>
+        <h1 id="title">BLOG</h1>
       </div>
+      
   		<?php if ( have_posts() ) : ?>
       <?php
 			// Start the Loop.
         while ( have_posts() ) : the_post(); ?>
-          <div class="accordion block">
+        
+          <div class="underline block">
             <div class="header">
-                <?php the_title( '<h2>', '</h2>' ); ?>
+                <?php	$title = get_the_title(); ?>
+                <div class="header-title">
+                  <h1><?php echo $title; ?></h1>
+                </div>
               </div>
               <div class="content">
-              <?php the_content( '<p>', '' ); ?>
-              <h2 class="moreLink"><a href="<?php echo post_permalink(); ?>">MORE ></a></h2>
-              </p>
-            </div>
+                <?php the_content( '<p>', '</p>' ); ?>
+              </div>
           </div>
+
       <?php
 
 			// End the loop.
 			endwhile;
+      
+      the_posts_pagination( array(
+				'prev_text'          => __( 'Previous page', 'SI' ),
+				'next_text'          => __( 'Next page', 'SI' ),
+				'before_page_number' => '<span>' . __( 'Page', 'SI' ) . ' </span>',
+			) );
 
 		endif;
-		?>
-
+		?>          
+          
 		</main><!-- .site-main -->
-	</section><!-- .content-area -->
+	</div><!-- .content-area -->
 
 <?php get_footer(); ?>
+
+

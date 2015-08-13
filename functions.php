@@ -90,6 +90,32 @@ function text() {
 }
 add_action( 'init', 'text' );
 
+function client() {
+  $labels = array(
+    'name'               => _x( 'clients', 'post type general name' ),
+    'singular_name'      => _x( 'client', 'post type singular name' ),
+    'add_new'            => _x( 'Add New', 'book' ),
+    'add_new_item'       => __( 'Add New Client' ),
+    'edit_item'          => __( 'Edit Client' ),
+    'new_item'           => __( 'New Client' ),
+    'all_items'          => __( 'All Cient' ),
+    'menu_name'          => 'Client'
+  );
+  $args = array(
+    'labels'        => $labels,
+    'description'   => 'Shows Client',
+    'public'        => true,
+    'menu_position' => 5,
+    'supports'      => array( 'title', 'editor', 'thumbnail' ),
+    'has_archive'   => true,
+    'capability_type'    => 'page',
+    'singular_name' => 'text',
+    'archive_name'  => 'text'
+  );
+  register_post_type( 'client', $args ); 
+}
+add_action( 'init', 'client' );
+
 function dividers() {
   $labels = array(
     'name'               => _x( 'dividers', 'post type general name' ),
@@ -142,6 +168,32 @@ function pagedivider() {
 }
 add_action( 'init', 'pagedivider' );
 
+function whatwedo() {
+  $labels = array(
+    'name'               => _x( 'whatwedos', 'post type general name' ),
+    'singular_name'      => _x( 'whatwedor', 'post type singular name' ),
+    'add_new'            => _x( 'Add New', 'book' ),
+    'add_new_item'       => __( 'Add New What We Do' ),
+    'edit_item'          => __( 'Edit whatwedo' ),
+    'new_item'           => __( 'New whatwedo' ),
+    'all_items'          => __( 'All whatwedo' ),
+    'menu_name'          => 'What We Do'
+  );
+  $args = array(
+    'labels'        => $labels,
+    'description'   => 'Shows What We Do',
+    'public'        => true,
+    'menu_position' => 5,
+    'supports'      => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
+    'has_archive'   => true,
+    'capability_type'    => 'page',
+    'singular_name' => 'whatwedo',
+    'archive_name'  => 'whatwedo'
+  );
+  register_post_type( 'whatwedo', $args ); 
+}
+add_action( 'init', 'whatwedo' );
+
 function teams() {
   $labels = array(
     'name'               => _x( 'teams', 'post type general name' ),
@@ -167,4 +219,4 @@ function teams() {
   register_post_type( 'team', $args ); 
 }
 add_action( 'init', 'teams' );
-add_theme_support('post-thumbnails', array( 'post', 'page', 'divider', 'team', 'text', 'case-studies', 'page-divider') );
+add_theme_support('post-thumbnails', array( 'post', 'page', 'divider', 'team', 'text', 'case-studies', 'page-divider', 'whatwedo', 'client') );
