@@ -9,7 +9,7 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-      <div class="block">
+      <div class="block">asdfsdf
         <h1 id="title">CASE STUDIES</h1>
       </div>
       
