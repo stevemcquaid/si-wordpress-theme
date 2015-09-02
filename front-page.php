@@ -1,9 +1,7 @@
 <?php
-
 // Template name: Static Front Page
-?>
 
-<?php get_header(); ?>
+get_header(); ?>
 
 <div class="first">
   <nav class="site-nav">
@@ -80,43 +78,76 @@
 <div id="clients" class="section clients">
 <div class="container">
   <h2>Clients</h2>
-  <div class="row">
-    <div class="col-md-5ths">
+  <div class="category-list">
+    <div class="category">
       <h3>Retail</h3>
       <ul>
-        <li></li>
+        <li>
+          <img src="" alt="">
+        </li>
+        <li>
+          <img src="" alt="">
+        </li>
+        <li>
+          <img src="" alt="">
+        </li>
+        <li>
+          <img src="" alt="">
+        </li>
       </ul>
     </div>
-    <div class="col-md-5ths">
+    <div class="category">
       <h3>Commercial real estate</h3>
       <ul>
         <li>
-          <img src="img/clients_sm_macerich." alt="">
+          <img src="" alt="">
         </li>
-        <li></li>
-        <li></li>
-        <li></li>
+        <li>
+          <img src="" alt="">
+        </li>
+        <li>
+          <img src="" alt="">
+        </li>
+        <li>
+          <img src="" alt="">
+        </li>
       </ul>
     </div>
-    <div class="col-md-5ths">
+    <div class="category">
       <h3>Healthcare</h3>
       <ul>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
+        <li>
+          <img src="" alt="">
+        </li>
+        <li>
+          <img src="" alt="">
+        </li>
+        <li>
+          <img src="" alt="">
+        </li>
+        <li>
+          <img src="" alt="">
+        </li>
       </ul>
     </div>
-    <div class="col-md-5ths">
+    <div class="category">
       <h3>Corporate</h3>
       <ul>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
+        <li>
+          <img src="" alt="">
+        </li>
+        <li>
+          <img src="" alt="">
+        </li>
+        <li>
+          <img src="" alt="">
+        </li>
+        <li>
+          <img src="" alt="">
+        </li>
       </ul>
     </div>
-    <div class="col-md-5ths">
+    <div class="category">
       <h3>Sports and entertainment</h3>
       <ul>
         <li></li>
@@ -236,5 +267,4 @@
   </div>
 </div>
 <?php get_footer(); ?>
-
 

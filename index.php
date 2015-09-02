@@ -12,11 +12,13 @@
  *
  * @package SI
  */
+
 get_header(); ?>
+
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
       <div class="block">
-        <h1 id="title">wkljeflakwjefljwelkfjlkjlkjlkjlkjlkjlkjldkjflskdjflk</h1>
+        <h1 id="title">BLOG</h1>
       </div>
       
   		<?php if ( have_posts() ) : ?>

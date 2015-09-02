@@ -11,8 +11,26 @@
 
 get_header(); ?>
  
+  <header class="header">
+    <nav class="site-nav">
+      <div class="container">
+        <div class="col-md-4">
+          <a href="/"><img class="logo" src="<?php echo get_template_directory_uri();?>/img/SensoryLogo.jpg" alt="Sensory Interative" /></a>
+        </div>
+        <ul class="col-md-8">
+          <li><a href="#what-we-do" title="">What we do</a></li>
+          <li><a href="#clients" title="">Clients</a></li>
+          <li><a href="#services" title="">Services</a></li>
+          <li><a href="#blog" title="">Blog</a></li>
+          <li><a href="#teams" title="">Team</a></li>
+          <li><a href="#contact" title="">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+		<main id="main" class="site-main container" role="main">
 
 		<?php
 		// Start the loop.

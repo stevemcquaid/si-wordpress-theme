@@ -7,32 +7,28 @@
 
 get_header(); ?>
 
-askdjflaksjdlkfjaslkdfjalskdjflaksjdflkasjdflkajsldkfjal
-
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
-      
+<article class="casestudy">      
   		<?php if ( have_posts() ) : ?>
       <?php
 			// Start the Loop.
         while ( have_posts() ) : the_post(); ?>
         
-          <div class="accordion block">
-            <div class="page-header">
-              <img src='<?php echo wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' )[0]; ?>'>
-                <?php	$title = explode("^", get_the_title()); ?>
-                <div class="page-header-title">
-                  <h2><?php echo $title[0]; ?></h2>
-                  <h1><?php echo $title[1]; ?></h1>
-                </div>
-              </div>
-              <div class="page-content">
-                <?php the_content( '<p>', '</p>' ); ?>
-              </div>
-              <div class="backLink">
-                <h1><a href="<?php echo get_home_url(); ?>">< Back</a></h1>
-              </div>
+        <?php $title = explode("^", get_the_title()); ?>
+
+        <div class="container">
+          <header>
+            <h2><?php echo $title[0]; ?></h2>
+            <h1><?php echo $title[1]; ?></h1>
+          </header>
+          <div class="row">
+            <div class="col-md-3">
+              
+            </div>
+            <div class="col-md-9 content">
+              <?php the_content( '<p>', '</p>' ); ?>
+            </div>
           </div>
+        </div>
 
       <?php
 
@@ -42,8 +38,12 @@ askdjflaksjdlkfjaslkdfjalskdjflaksjdflkasjdflkajsldkfjal
 		endif;
 		?>          
           
-		</main><!-- .site-main -->
-	</div><!-- .content-area -->
+    <div class="evaluate">
+      <div class="container">
+        We evaluate, plan, launch, and operate technology-driven experiences that generate revenue and connect brands with customers.
+      </div>
+    </div>
+	</article><!-- .content-area -->
 
 <?php get_footer(); ?>
 
